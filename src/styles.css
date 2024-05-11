@@ -1,0 +1,100 @@
+*
+{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body
+{
+     font-family: 'Poppins', sans-serif;
+     background-color: #fff;
+}
+
+
+
+:root{
+    /* -- isliye so that we come to know that it is our declared variable and not a class */
+
+   --primary-color:#42a5f5;
+   
+   --primary-light-color:#bbdefb;
+
+   --secondary-color:#0d47a1;
+   --secondary-light-color:#1e88e5;
+
+   --add:#9d0208;
+   --delete:#6c757d;
+
+}
+
+
+.p-0
+{
+     padding: 0 !important;
+}
+
+/* .btn-primary
+{
+     background-color: var(--primary-light-color);
+} */
+
+
+.btn-primary
+{
+            background-color: var(--secondary-color) !important;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            
+
+            position: relative;
+        }
+
+        .btn-primary:hover{
+            background-color:var(--secondary-color);
+            color: #fff;
+        }
+
+
+        .btn-primary:active{
+          transition: all 0.5s ;
+          top: 4px;
+          left: 4px;
+
+
+      }
+
+
+      .btn-add
+{
+            background-color:var(--primary-light-color)!important;
+            color: #fff !important;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+
+
+          .btn-delete
+          {
+                      background-color:var(--primary-light-color) !important;
+                      color: #fff !important;
+                      border: none;
+                      padding: 10px 20px;
+                      border-radius: 5px;
+                      cursor: pointer;
+                      transition: background-color 0.3s;
+          }
+
+
+
+        
+
+
+        
