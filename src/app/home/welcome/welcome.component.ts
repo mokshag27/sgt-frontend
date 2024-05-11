@@ -14,6 +14,11 @@ export class WelcomeComponent {
   ) {
 
   }
+  getCategories():void
+  {
+    this.router.navigate(["/categories"])
+
+  }
 
 
 
