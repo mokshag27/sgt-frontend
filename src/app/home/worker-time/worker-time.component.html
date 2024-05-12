@@ -1,0 +1,50 @@
+<div class="container-fluid" style="margin-top: 40px">
+    <div class="row">
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="mt-5 myHeading-Heading">
+                        <div class="d-flex justify-content-center align-items-center myHeading">
+                            <h1 class="p-2">Set the details</h1>
+                            <span>Set date and time!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row cards d-flex">
+                    <div class="card mb-3" *ngFor="let data of CartDataService; let i = index">
+                        <div class="row g-0">
+                            <div class=""></div>
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">
+                                        <span>{{ data.ourservices_name }}</span>
+                                        <form [formGroup]="ourForm">
+                                            <div class="form-group">
+                                                <label for="dateandTime">Select date and time:</label>
+                                                <input type="datetime-local" class="form-control" id="date&time"
+                                                    placeholder="Select date time" required formControlName="dates"
+                                                    [(ngModel)]="formArray.controls[i]">
+                                            </div>
+                                        </form>
+                                        <button class="btn btn-primary" (click)="setTimer(data.cart_id, i)">Set</button>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 myHeading-Heading">
+                            <div class="d-flex justify-content-center align-items-center myHeading">
+                                <span *ngIf="WorkersData && WorkersData.worker_name !== null">The worker assigned for
+                                    the service {{ data.ourservices_name }} are {{ WorkersData.worker_name }}, {{
+                                    WorkersData.worker_email }}, {{ WorkersData.worker_phone }}</span>
+                                <span *ngIf="!WorkersData || WorkersData.worker_name === null">There is no worker
+                                    currently available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

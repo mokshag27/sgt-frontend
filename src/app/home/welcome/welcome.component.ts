@@ -7,14 +7,22 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  styleUrls: ['./welcome.component.css'],
 })
 export class WelcomeComponent {
-  constructor(private route: ActivatedRoute, private cookieService: CookieService,private router: Router,private modalService: NgbModal,private homeservice:HomeService
-  ) {
-
+  constructor(
+    private route: ActivatedRoute,
+    private cookieService: CookieService,
+    private router: Router,
+    private modalService: NgbModal,
+    private homeservice: HomeService
+  ) {}
+  getCategories(): void {
+    this.router.navigate(['/categories']);
   }
 
-
-
+  goToViewCart():void
+  {
+    this.router.navigate(['/view-cart']);
+  }
 }

@@ -51,7 +51,7 @@
                 </div>
               </div>
               
-              <div class="row cards d-flex">
+              <div class="row cards d-flex" *ngFor="let item of subCategoriesData">
                 <div class="card mb-3">
                     <div class="row g-0">
                       <div class="">
@@ -64,10 +64,10 @@
                       <div class="col-md-12">
                         <div class="card-body">
                           <h5 class="card-title fw-bold">
-                           <span class="fw-normal">Housing service</span>
+                           <span class="fw-normal">{{item.subcategory_name}}</span>
                           </h5>
             
-    
+                      <button  type="button" class="btn btn-primary" (click)="showServices(item.subcategory_id)">Show services</button>
               
   
   
@@ -76,78 +76,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card mb-3">
-                    <div class="row g-0">
-                      <div class="">
-                        <img
-                          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
-                          class="img-fluid rounded-start d-flex justify-content-center"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="col-md-12">
-                        <div class="card-body">
-                          <h5 class="card-title fw-bold">
-                           <span class="fw-normal">Housing service</span>
-                          </h5>
-            
-    
-              
-  
-  
-  
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3">
-                    <div class="row g-0">
-                      <div class="">
-                        <img
-                          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
-                          class="img-fluid rounded-start d-flex justify-content-center"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="col-md-12">
-                        <div class="card-body">
-                          <h5 class="card-title fw-bold">
-                             <span class="fw-normal">Housing service</span>
-                          </h5>
-            
-    
-              
-  
-  
-  
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3">
-                    <div class="row g-0">
-                      <div class="">
-                        <img
-                          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
-                          class="img-fluid rounded-start d-flex justify-content-center"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="col-md-12">
-                        <div class="card-body">
-                          <h5 class="card-title fw-bold">
-                           <span class="fw-normal">Housing service</span>
-                          </h5>
-            
-    
-              
-  
-  
-  
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+ 
       
 
   

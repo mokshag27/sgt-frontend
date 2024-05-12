@@ -6,7 +6,12 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
 import { ServicesComponent } from './services/services.component';
 import { CartComponent } from './cart/cart.component';
-
+import { WorkerTimeComponent } from './worker-time/worker-time.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -15,17 +20,25 @@ import { CartComponent } from './cart/cart.component';
     AllCategoriesComponent,
     SubCategoriesComponent,
     ServicesComponent,
-    CartComponent
+    CartComponent,
+    WorkerTimeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
-    NgbDropdownModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
   ],
-  exports:
-  [
-    WelcomeComponent
-
-
-  ]
+  exports: [
+    WelcomeComponent,
+    AllCategoriesComponent,
+    SubCategoriesComponent,
+    ServicesComponent,
+    CartComponent,
+    WorkerTimeComponent,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

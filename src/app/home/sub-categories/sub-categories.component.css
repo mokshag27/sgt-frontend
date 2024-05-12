@@ -99,12 +99,12 @@ a {
 
 
 .card {
-  width: 48%;
+  width: 50%;
   box-shadow: 1px 1px 2px var(--secondary-color);
 
 background-color: #fff;
 border-radius: 30px;
-/* margin: auto; */
+margin: auto !important;
 margin: 6px;
 padding-top: 0.4rem;
 
@@ -145,5 +145,8 @@ object-fit: cover;
 
 }
 
-
+.cards
+{
+  margin: auto !important;
+}
 

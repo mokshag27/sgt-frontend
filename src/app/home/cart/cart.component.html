@@ -1,11 +1,12 @@
-
 <body>
   <!-- Top Navbar -->
   <nav class="navbar navbar-expand-lg mb-5">
     <div class="container-fluid">
       <div class="logo">
         <i class="fa-brands fa-pix fa-3x"></i>
-        <a href="#"><p><span>City</span>Craftsmen</p></a>
+        <a href="#">
+          <p><span>City</span>Craftsmen</p>
+        </a>
       </div>
       <form>
         <div class="input-group">
@@ -17,15 +18,16 @@
           </span>
         </div>
       </form>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" aria-current="page" href="#">Categories</a>
+          <!-- <a class="nav-link" aria-current="page" href="#">Categories</a>
           <a class="nav-link" href="#">Login</a>
           <a class="nav-link" href="#">Sign-up</a>
-          <a class="nav-link" href="#">Faqs</a>
+          <a class="nav-link" href="#">Faqs</a> -->
         </div>
       </div>
     </div>
@@ -44,20 +46,64 @@
                   <th>Service Name</th>
                   <th>Quantity</th>
                   <th>Price</th>
+                  <th>Added date</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Painting</td>
+                <tr *ngFor="let CartData of CartDataService">
+                  <td>{{CartData.ourservices_name}}</td>
                   <td>1</td>
-                  <td>1400</td>
+                  <td>{{CartData.price}}</td>
+                  <td>{{CartData.added_date}}</td>
+                  <td>{{CartData.cart_id}}</td>
                   <td>
-                    <button type="button" class="btn btn-secondary">
+                    <button type="button" class="btn btn-secondary" (click)="deleteService(CartData.cart_id)">
                       <i class="far fa-trash-alt"></i>
                     </button>
                   </td>
                 </tr>
               </tbody>
+              <thead>
+                <tr>
+                  <th>Package Name</th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th>Price</th>
+                  <th>Added date</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let CartData of CartDataOfPackage">
+                  <td>{{CartData.package_name}}</td>
+                  <td>1</td>
+                  <td>{{CartData.discounted_price}}</td>
+                  <td>{{CartData.added_date}}</td>
+                                    <td>{{CartData.cart_id}}</td>
+
+                  <td>
+                    <button type="button" class="btn btn-secondary" (click)="deletePackage(CartData.cart_id)">
+                      <i class="far fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+
+              <thead>
+                <tr>
+                  <th>The total bill is:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td *ngIf="BillData">{{BillData.total_amount}}</td>
+                </tr>
+              </tbody>
+
+              <button class="btn btn-primary" type="button" (click)="bookServices()">Book</button>
+              
+
             </table>
           </div>
         </div>
@@ -65,5 +111,4 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
 </body>

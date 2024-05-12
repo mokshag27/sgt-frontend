@@ -5,28 +5,43 @@ import { AllCategoriesComponent } from './home/all-categories/all-categories.com
 import { SubCategoriesComponent } from './home/sub-categories/sub-categories.component';
 import { ServicesComponent } from './home/services/services.component';
 import { CartComponent } from './home/cart/cart.component';
+import { WorkerTimeComponent } from './home/worker-time/worker-time.component';
+import { LoginComponent } from './home/login/login.component';
+import { RegisterComponent } from './home/register/register.component';
 
 const routes: Routes = [
   {
-    path:'home',
-    component:WelcomeComponent
+    path: 'home',
+    component: WelcomeComponent,
   },
   {
-    path:'categories',
-    component:AllCategoriesComponent
+    path: 'categories',
+    component: AllCategoriesComponent,
   },
 
   {
-    path:'sub-categories',
-    component:SubCategoriesComponent
+    path: 'sub-categories/:category_id',
+    component: SubCategoriesComponent,
   },
   {
-    path:'services',
-    component:ServicesComponent
+    path: 'services/:subcategory_id',
+    component: ServicesComponent,
   },
   {
-    path:'view-cart',
-    component:CartComponent
+    path: 'view-cart',
+    component: CartComponent,
+  },
+  {
+    path: 'worker-time',
+    component: WorkerTimeComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ];
 
